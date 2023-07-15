@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+body {
+  font-family: Arial, sans-serif;
+  background-color: #c8dde4;
+  color: #333;
+}
+
+h1 {
+  font-size: 36px;
+  color: #6268d3;
+}
+
+.post-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.post {
+  margin-bottom: 20px;
+  padding: 20px;
+  border: 1px solid #41418d;
+  border-radius: 5px;
+}
+
+.post h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: y#19093f;
+}
+
+.post p {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #6b3535;
+}
+        
+    </style>
+</head>
+<body>
+    <h1>Post List</h1>
+
+<ul class="post-list">
+  {% for post in context %}
+    <li class="post">
+      <h2>{{ post.title }}</h2>
+      <p>{{ post.content }}</p>
+    </li>
+  {% endfor %}
+</ul>
+</body>
+</html>
