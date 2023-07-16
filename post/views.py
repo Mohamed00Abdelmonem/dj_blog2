@@ -44,15 +44,9 @@ def edit_post(request, id_post):
         return render(request, 'edit_post.html', {'form':form}) 
     
 
-# def new_post(request, id_post):
-#     data = Post.objects.get(id=id_post)
-#     if request.method == 'POST':
-#         form = PostForm(request.POST, request.FILES, instance=data)
-#         if form.is_valid():
-#             form.save()
-#             return redirect('/')
-#         else:
-#             return render(request, 'new_post.html', {'form': form})
-#     else:
-#         form = PostForm(instance=data)
-#         return render(request, 'new_post.html', {'form': form})
+
+def delete_post(request, id_post):
+        data = Post.objects.get(id=id_post)
+        data.delete()
+        return redirect('/')
+
