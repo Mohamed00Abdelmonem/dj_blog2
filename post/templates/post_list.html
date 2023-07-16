@@ -11,6 +11,28 @@ body {
   color: #333;
 }
 
+button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+a {
+  color: rgb(29, 33, 82);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
 h1 {
   font-size: 36px;
   color: #6268d3;
@@ -45,12 +67,14 @@ h1 {
 </head>
 <body>
     <h1>Post List</h1>
+    <button> <a href="new">new post</a></button>
 
 <ul class="post-list">
   {% for post in context %}
     <li class="post">
       <h2><a href="{{ post.id }}">{{ post.title }}</a></h2>
       <p><a href="{{post.id}}"></a>{{ post.content }}</p>
+      <button> <a href="{{post.id}}/edit">edit</a></button>
     </li>
   {% endfor %}
 </ul>
